@@ -1,2 +1,3 @@
 # thermalift
- Calculator for thermal lift in geothermal wells
+
+Calculator for thermal lift effect in geothermal wells
