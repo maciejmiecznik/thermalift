@@ -1,0 +1,4 @@
+/examples/formation_temperature_test.py
+/examples/*.csv
+!/examples/formation_temperature.csv
+!/examples/zenith_measerements.csv
