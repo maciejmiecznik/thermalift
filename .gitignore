@@ -1,4 +1,4 @@
 **/stargard/formation_temperature_test.py
 **/stargard/*.csv
-**/stargard/!formation_temperature.csv
-**/stargard/!zenith_measerements.csv
+!**/stargard/formation_temperature.csv
+!**/stargard/zenith_measerements.csv
