@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
 Thermalift, version 1.0
-Last updated on March 31, 2025
+Last updated on April 1, 2025
 
 author: Maciej Miecznik
 affiliation: Mineral and Energy Economy Research Institute,
