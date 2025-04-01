@@ -1,4 +1,5 @@
-**/stargard/formation_temperature_test.py
-**/stargard/*.csv
-!**/stargard/formation_temperature.csv
-!**/stargard/zenith_measerements.csv
+**/Case ST/formation_temperature_test.py
+**/Case ST/*.csv
+**/Case ST/*.xlsx
+!**/Case ST/formation_temperature.csv
+!**/Case ST/zenith_measerements.csv
