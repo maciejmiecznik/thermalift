@@ -25,7 +25,7 @@ gt7_formation.formation_temperature_plot(
     gt7_formation.data, gt7_formation.profile
 )
 
-"""
+
 # %% Import pumping data, remove duplicated columns, filter incorrect data
 gt7_zenith = pd.read_csv("zenith_measerements.csv", sep=";", decimal=",")
 
@@ -110,7 +110,7 @@ stargard_gt7.true_water_level = stargard_gt7.true_water_level(
     stargard_gt7.water_level,
     stargard_gt7.mean_flowing_dens,
     stargard_gt7.mean_stat_dens,
-    depth_max=2962,
+    depth_max=2691.3,
 )
 
 # Calculate true drawdown, after eliminating thermal lift
@@ -122,13 +122,13 @@ stargard_gt7.true_drawdown = stargard_gt7.true_drawdown(
 stargard_gt7.save_results(filename="results.xlsx")
 
 # %% FIGURES
-# stargard_gt7.raw_data_plot(
-#     stargard_gt7.pumping_input.iloc[:, 0],
-#     stargard_gt7.pumping_input.iloc[:, 5],
-#     stargard_gt7.pumping_input.iloc[:, 4],
-#     stargard_gt7.pumping_input.iloc[:, 3],
-#     title="Stargard GT-7 raw data",
-# )
+stargard_gt7.raw_data_plot(
+    stargard_gt7.pumping_input.iloc[:, 0],
+    stargard_gt7.pumping_input.iloc[:, 5],
+    stargard_gt7.pumping_input.iloc[:, 4],
+    stargard_gt7.pumping_input.iloc[:, 3],
+    title="Stargard GT-7 raw data",
+)
 
 stargard_gt7.mosaic_plot(
     stargard_gt7.pumping_input.iloc[:, 0],
@@ -139,9 +139,8 @@ stargard_gt7.mosaic_plot(
     stargard_gt7.true_water_level,
     stargard_gt7.recorded_drawdown,
     stargard_gt7.true_drawdown,
-    bounds=False,
+    bounds=True,
     show_fit=True,
     title="Stargard GT-7",
     figsize=(25, 12),
 )
-"""

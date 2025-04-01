@@ -90,8 +90,6 @@ class Formation:
             "Interpolated temperature along well`s curvature", fontsize=16
         )
 
-        plt.savefig("rock_formation_temperature.png", dpi=300)
-
 
 class Well:
 
@@ -353,6 +351,8 @@ class Well:
             label="true drawdown",
             s=20,
         )
+
+        # %% Perform curve fitting
 
         if show_fit is True:
 
