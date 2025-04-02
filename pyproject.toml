@@ -1,0 +1,26 @@
+[build-system]
+requires = ["hatchling >= 1.26"]
+build-backend = "hatchling.build"
+
+[project]
+name = "Thermalift"
+version = "1.0"
+authors = [
+  { name="Maciej Miecznik", email="miecznik@min-pan.krakow.pl" },
+]
+description = "Calculator of the thermal lift effect in geothermal wells"
+readme = "README.md"
+requires-python = ">=3.11"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+    "Topic :: Scientific/Engineering",
+]
+license = "BSD-3-Clause"
+license-files = ["LICENSE"]
+
+keywords = ["geothermal", "well test", "reservoir engineering"]
+
+[project.urls]
+Homepage = "https://github.com/maciejmiecznik/Thermalift/tree/main"
+Issues = "https://github.com/maciejmiecznik/Thermalift/issues"
