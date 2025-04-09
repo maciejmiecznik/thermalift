@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
-Thermalift, version 1.0
-Last updated on April 1, 2025
+Thermalift, version 1.0.2
+Last updated on April 9, 2025
 
 author: Maciej Miecznik
 affiliation: Mineral and Energy Economy Research Institute,
@@ -9,23 +9,18 @@ affiliation: Mineral and Energy Economy Research Institute,
              Wybickiego 7A, 31-261 Kraków, Poland
 e-mail: miecznik@min-pan.krakow.pl
 
-This code demonstrates the use of Thermalift 1.0 with some input files that
+This code demonstrates the use of Thermalift with some input files that
 require prior manipulation, data extraction, interpolation, etc.
 Finally, you get graphs and output files that show the influence of thermal lift
 effect on the observed water table level in a geothermal well during operation.
 """
 
 
-import sys
 import pandas as pd
 import thermalift
 
-# adding lib folder to the system path
-sys.path.insert(0, "..\..\lib")
-
 
 # %% Import static temperature profile of the formation
-# Stargard GT-7 well
 rock_formation_temperature_file = "formation_temperature.csv"
 rock_formation = thermalift.Formation(rock_formation_temperature_file)
 
@@ -147,7 +142,7 @@ test_well.mosaic_plot(
     test_well.true_water_level,
     test_well.recorded_drawdown,
     test_well.true_drawdown,
-    bounds=False,
+    bounds=True,
     show_fit=True,
     title="Test well raw and corrected pumping data",
     figsize=(25, 12),

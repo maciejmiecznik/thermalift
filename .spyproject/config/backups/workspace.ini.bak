@@ -4,7 +4,7 @@ save_data_on_exit = True
 save_history = True
 save_non_project_files = False
 project_type = 'empty-project-type'
-recent_files = ['lib\\thermalift.py', 'lib\\brine_density.py', 'examples\\Case ST\\test_well.py', '..\\..\\Task 3.3\\wellbore model 01.04.02025\\main.py']
+recent_files = ['..\\thermalift-archive\\lib\\Classes_test_version5.py', '..\\thermalift-archive\\examples\\Case ST\\test_well.py', 'src\\thermalift.py']
 
 [main]
 version = 0.2.0

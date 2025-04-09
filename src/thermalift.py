@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
-Thermalift, version 1.0
-Last updated on April 1, 2025
+Thermalift, version 1.0.2
+Last updated on April 9, 2025
 
 author: Maciej Miecznik
 affiliation: Mineral and Energy Economy Research Institute,
@@ -154,7 +154,7 @@ class Well:
         return a * x**2 + b * x + c
 
     # Calculate polynomial fitting
-    def polyfit(self, x, y, bounds=True):
+    def polyfit(self, x, y, bounds=False):
         # exclude values that are NaN or infinity
         idx = np.isfinite(x) & np.isfinite(y)
         x = np.asarray(x[idx], dtype="object")
@@ -178,8 +178,7 @@ class Well:
         y = np.asarray(y[idx], dtype="object")
 
         # Calculate R^2 coeff.
-        popt, pcov = curve_fit(self.polynomial, x, y)
-        residuals = self.polynomial(x, *popt) - y
+        residuals = x - y
         ss_res = np.sum(residuals**2)
         ss_tot = np.sum((y - np.mean(y)) ** 2)
         r_squared = 1 - ss_res / ss_tot
@@ -192,8 +191,8 @@ class Well:
         x = np.asarray(x[idx], dtype="object")
         y = np.asarray(y[idx], dtype="object")
 
-        popt, pcov = curve_fit(self.polynomial, x, y)
-        residuals = self.polynomial(x, *popt) - y
+        # popt, pcov = curve_fit(self.polynomial, x, y)
+        residuals = x - y
         ss_res = np.sum(residuals**2)
         rmse = (ss_res / len(y)) ** 0.5
         print("RMSE = ", rmse)
@@ -296,7 +295,7 @@ class Well:
             time,
             temperature,
             c="red",
-            label="mean temperature in flowing well",
+            label="mean temperature of water column in the flowing well",
         )
         axs["temperature"].grid(True)
         axs["temperature"].set_ylabel("Temperature [°C]", fontsize=12)
@@ -304,7 +303,10 @@ class Well:
         axs["temperature"].sharex(axs["flowrate"])
 
         axs["density"].plot(
-            time, density, c="orange", label="mean density in the flowing well"
+            time,
+            density,
+            c="orange",
+            label="mean density of water column in the flowing well",
         )
         axs["density"].grid(True)
         axs["density"].set_ylabel("Density[kg/$m^3$]", fontsize=12)
@@ -379,8 +381,14 @@ class Well:
                     rec_drawdown_polyfit[0],
                     rec_drawdown_polyfit[1],
                     rec_drawdown_polyfit[2],
-                    self.r_square(flowrate, recorded_drawdown),
-                    self.rmse(flowrate, recorded_drawdown),
+                    self.r_square(
+                        np.polyval(rec_drawdown_polyfit, flowrate),
+                        recorded_drawdown,
+                    ),
+                    self.rmse(
+                        np.polyval(rec_drawdown_polyfit, flowrate),
+                        recorded_drawdown,
+                    ),
                 ),
                 fontsize=11,
                 color="red",
@@ -401,8 +409,14 @@ class Well:
                     true_drawdown_polyfit[0],
                     true_drawdown_polyfit[1],
                     true_drawdown_polyfit[2],
-                    self.r_square(flowrate, corrected_drawdown),
-                    self.rmse(flowrate, corrected_drawdown),
+                    self.r_square(
+                        np.polyval(true_drawdown_polyfit, flowrate),
+                        corrected_drawdown,
+                    ),
+                    self.rmse(
+                        np.polyval(true_drawdown_polyfit, flowrate),
+                        corrected_drawdown,
+                    ),
                 ),
                 fontsize=11,
                 color="navy",

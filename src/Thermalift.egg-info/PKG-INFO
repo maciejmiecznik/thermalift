@@ -1,0 +1,32 @@
+Metadata-Version: 2.4
+Name: Thermalift
+Version: 1.0.2
+Summary: Calculator of the thermal lift effect in geothermal wells
+Author-email: Maciej Miecznik <miecznik@min-pan.krakow.pl>
+License-Expression: BSD-3-Clause
+Project-URL: Homepage, https://github.com/maciejmiecznik/Thermalift/tree/main
+Project-URL: Issues, https://github.com/maciejmiecznik/Thermalift/issues
+Keywords: geothermal,well test,reservoir engineering
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: Scientific/Engineering
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Dynamic: license-file
+
+# Thermalift
+
+**Calculator for eliminating the thermal lift effect from production data in geothermal wells.**
+
+Thermalift was developed as part of the [GeoModel](https://geomodel.pl/en/) project.
+
+The user's guide can be found in the docs directory or [here](https://github.com/maciejmiecznik/thermalift/blob/main/docs/Thermalift_1.0_user_guide.pdf)
+
+
+The output from Thermalift calculator can be a figure similar to the below one, showing how thermal lift influences the observed water table level or water table drawdown.
+
+![Thermalft output figure](https://github.com/maciejmiecznik/thermalift/blob/main/examples/Case%20ST/Test%20well%20raw%20and%20corrected%20pumping%20data_thermal_lift.png?raw=true)
+
+
+Thermalift is a part of project "Optimal management of low-temperature geothermal reservoirs – Polish-Icelandic cooperation on reservoir modelling" (acronym GeoModel), financed under the Fund for Bilateral Relations through the [European Economic Area Financial Mechanism (EEA FM) and the Norwegian Financial Mechanism (NFM)](https://eeagrants.org/) 2014-2021 under the Environment, Energy and Climate Change Programme.
