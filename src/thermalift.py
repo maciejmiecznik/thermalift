@@ -191,7 +191,6 @@ class Well:
         x = np.asarray(x[idx], dtype="object")
         y = np.asarray(y[idx], dtype="object")
 
-        # popt, pcov = curve_fit(self.polynomial, x, y)
         residuals = x - y
         ss_res = np.sum(residuals**2)
         rmse = (ss_res / len(y)) ** 0.5
